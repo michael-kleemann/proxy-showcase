@@ -2,7 +2,12 @@
 const nextConfig = {
   async rewrites() {
     return {
-      beforeFiles: [],
+      beforeFiles: [
+        {
+          source: '/proxy-standard-target/_next/:path*',
+          destination: 'https://proxy-standard-target-git-main-michael-kleemanns-projects.vercel.app/proxy-standard-target/_next/:path*',
+        },
+      ],
       afterFiles: [],
       fallback: [
         {
